@@ -42,6 +42,12 @@ $routes->post('/storeBuku', 'BukuController::store');
 $routes->get('/editBuku/(:num)', 'BukuController::edit/$1');
 $routes->post('/updateBuku/(:num)', 'BukuController::update/$1');
 $routes->post('/deleteBuku/(:num)', 'BukuController::delete/$1');
+$routes->get('/kategori', 'KategoriController::index');
+$routes->get('/createKategori', 'KategoriController::create');
+$routes->post('/storeKategori', 'KategoriController::store');
+$routes->get('/editKategori/(:num)', 'KategoriController::edit/$1');
+$routes->post('/updateKategori/(:num)', 'KategoriController::update/$1');
+$routes->post('/deleteKategori/(:num)', 'KategoriController::delete/$1');
 
 /*
  * --------------------------------------------------------------------
