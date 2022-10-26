@@ -16,7 +16,12 @@
                 </div>
                 <div class="form-group">
                     <label for="kategori">Kategori</label>
-                    <input type="text" name="kategori" class="form-control" id="kategori">
+                    <select name = "kategori" id="kategori" class="form-control" required>
+                        <option value="" hidden>--Pilih--</option>
+                        <?php foreach ($kategori as $kt) : ?>
+                            <option value="<?=$kt['nama_kategori']?>"><?=$kt['nama_kategori']?></option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="penulis">Penulis</label>

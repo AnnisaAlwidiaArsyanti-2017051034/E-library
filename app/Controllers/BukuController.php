@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\Buku;
+use App\Models\Kategori;
 
 class BukuController extends BaseController
 {
@@ -17,9 +18,15 @@ class BukuController extends BaseController
         ];
         return view('buku/list', $data);
     }
-    public function create(){
+    public function create(){        
+        $kategoriModel = new Kategori();
+        $kategori = $kategoriModel->findAll();
+        $bukuModel = new Buku();
+        $buku = $bukuModel->findAll();
         $data = [
-            'title' => 'Tambah Buku',         
+            'title' => 'Tambah Buku',
+            'kategori' => $kategori,
+            'buku' => $buku,
         ];
         return view('buku/create', $data);
     }
@@ -59,11 +66,14 @@ class BukuController extends BaseController
         return redirect()->to('/buku');
     }
     public function edit($kode){
+        $kategoriModel = new Kategori();
+        $kategori = $kategoriModel->findAll();
         $bukuModel = new Buku();
         $buku = $bukuModel->find($kode);
         $data = [
-            'title' => 'Edit Buku',
-            'buku' => $buku,            
+            'title' => 'Tambah Buku',
+            'kategori' => $kategori,
+            'buku' => $buku,
         ];
         return view('buku/edit', $data);
     }
