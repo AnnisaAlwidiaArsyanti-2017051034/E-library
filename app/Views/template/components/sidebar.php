@@ -11,24 +11,38 @@
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
         <a class="nav-link" href="#">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Dashboard</span></a>
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+        </a>
     </li>
     <!-- Divider -->
-    <hr class="sidebar-divider">
-    <!-- Nav Item - Tables -->
+    <hr class="sidebar-divider my-0">
+    <!-- Nav Item - Dashboard -->
     <li class="nav-item">
-        <a class="nav-link" href="/buku">
-        <i class="fas fa-fw fa-book"></i>
-        <span>Buku</span></a>
-    </li>
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="/kategori">
-        <i class="fas fa-fw fa-grip-horizontal"></i>
-        <span>Kategori</span></a>
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-book"></i>
+            <span>Pustaka</span>
+        </a>
+        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" style="">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="/buku">
+                    <i class="fas fa-fw fa-book"></i>
+                    <span>Buku</span>
+                </a>
+                <a class="collapse-item" href="/kategori">
+                    <i class="fas fa-fw fa-grip-horizontal"></i>
+                    <span>Kategori</span>
+                </a>
+                <a class="collapse-item" href="/penulis">
+                    <i class="fas fa-fw fa-user-tag"></i>
+                    <span>Penulis</span>
+                </a>
+                <a class="collapse-item" href="/penerbit">
+                    <i class="fas fa-fw fa-building"></i>
+                    <span>Penerbit</span>
+                </a>
+            </div>
+        </div>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

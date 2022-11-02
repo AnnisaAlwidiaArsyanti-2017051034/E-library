@@ -11,9 +11,9 @@ class Buku extends Seeder
         $data_buku = [
             [
                 'judul_buku' => 'The Magic of Adobe Photoshop Edisi Revisi 2',
-                'kategori' => 'Komputer',
-                'penulis' => 'Hendi Hendratman',
-                'penerbit' => 'Informatika',
+                'kategori' => '1',
+                'penulis' => '2',
+                'penerbit' => '4',
                 'tahun_terbit' => '2017',
                 'halaman' => '752',
                 'jumlah_stok' => '11',

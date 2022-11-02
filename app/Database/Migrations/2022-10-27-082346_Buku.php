@@ -9,7 +9,7 @@ class Buku extends Migration
     public function up()
     {
         $this->forge->addField([
-            'kode' => [
+            'kode_buku' => [
                 'type'           => 'INT',
                 'constraint'     => 5,
                 'unsigned'       => true,
@@ -20,16 +20,19 @@ class Buku extends Migration
                 'constraint' => '255',
             ],
             'kategori' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
+                'type' => 'INT',
+                'constraint' => 5,
+                'unsigned'       => true,
             ],
             'penulis' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
+                'type' => 'INT',
+                'constraint' => 5,
+                'unsigned'       => true,
             ],
             'penerbit' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
+                'type' => 'INT',
+                'constraint' => 5,
+                'unsigned'       => true,
             ],
             'tahun_terbit' => [
                 'type' => 'INT',
@@ -53,7 +56,7 @@ class Buku extends Migration
             ],
 
         ]);
-        $this->forge->addKey('kode', true);
+        $this->forge->addKey('kode_buku', true);
         $this->forge->createTable('buku');
     }
 

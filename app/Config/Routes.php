@@ -48,7 +48,18 @@ $routes->post('/storeKategori', 'KategoriController::store');
 $routes->get('/editKategori/(:num)', 'KategoriController::edit/$1');
 $routes->post('/updateKategori/(:num)', 'KategoriController::update/$1');
 $routes->post('/deleteKategori/(:num)', 'KategoriController::delete/$1');
-
+$routes->get('/penulis', 'PenulisController::index');
+$routes->get('/createPenulis', 'PenulisController::create');
+$routes->post('/storePenulis', 'PenulisController::store');
+$routes->get('/editPenulis/(:num)', 'PenulisController::edit/$1');
+$routes->post('/updatePenulis/(:num)', 'PenulisController::update/$1');
+$routes->post('/deletePenulis/(:num)', 'PenulisController::delete/$1');
+$routes->get('/penerbit', 'PenerbitController::index');
+$routes->get('/createPenerbit', 'PenerbitController::create');
+$routes->post('/storePenerbit', 'PenerbitController::store');
+$routes->get('/editPenerbit/(:num)', 'PenerbitController::edit/$1');
+$routes->post('/updatePenerbit/(:num)', 'PenerbitController::update/$1');
+$routes->post('/deletePenerbit/(:num)', 'PenerbitController::delete/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

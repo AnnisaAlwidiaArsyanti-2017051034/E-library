@@ -5,6 +5,8 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\Buku;
 use App\Models\Kategori;
+use App\Models\Penerbit;
+use App\Models\Penulis;
 
 class BukuController extends BaseController
 {
@@ -21,11 +23,17 @@ class BukuController extends BaseController
     public function create(){        
         $kategoriModel = new Kategori();
         $kategori = $kategoriModel->findAll();
+        $penulisModel = new Penulis();
+        $penulis = $penulisModel->findAll();
+        $penerbitModel = new Penerbit();
+        $penerbit = $penerbitModel->findAll();
         $bukuModel = new Buku();
         $buku = $bukuModel->findAll();
         $data = [
             'title' => 'Tambah Buku',
             'kategori' => $kategori,
+            'penulis' => $penulis,
+            'penerbit' => $penerbit,
             'buku' => $buku,
         ];
         return view('buku/create', $data);
@@ -33,9 +41,9 @@ class BukuController extends BaseController
     public function store(){
         if(!$this->validate([
             'judul_buku' => 'required|string',
-            'kategori' => 'required|string',
-            'penulis' => 'required|string',
-            'penerbit' => 'required|string',
+            'kategori' => 'required',
+            'penulis' => 'required',
+            'penerbit' => 'required',
             'tahun_terbit' => 'required|numeric',
             'halaman' => 'required|numeric',
             'jumlah_stok'  => 'required|numeric',
@@ -67,12 +75,18 @@ class BukuController extends BaseController
     }
     public function edit($kode){
         $kategoriModel = new Kategori();
-        $kategori = $kategoriModel->findAll();
+        $kategori = $kategoriModel->findAll();        
+        $penulisModel = new Penulis();
+        $penulis = $penulisModel->findAll();
+        $penerbitModel = new Penerbit();
+        $penerbit = $penerbitModel->findAll();
         $bukuModel = new Buku();
         $buku = $bukuModel->find($kode);
         $data = [
             'title' => 'Tambah Buku',
             'kategori' => $kategori,
+            'penulis' => $penulis,
+            'penerbit' => $penerbit,
             'buku' => $buku,
         ];
         return view('buku/edit', $data);
@@ -81,9 +95,9 @@ class BukuController extends BaseController
     public function update($kode){
         if(!$this->validate([
             'judul_buku' => 'required|string',
-            'kategori' => 'required|string',
-            'penulis' => 'required|string',
-            'penerbit' => 'required|string',
+            'kategori' => 'required',
+            'penulis' => 'required',
+            'penerbit' => 'required',
             'tahun_terbit' => 'required|numeric',
             'halaman' => 'required|numeric',
             'jumlah_stok'  => 'required|numeric',

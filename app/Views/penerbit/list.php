@@ -2,11 +2,11 @@
 <?= $this->section('content'); ?>
 <div class="container-fluid">
   <!-- Page Heading -->
-  <h1 class="h3 mb-2 font-weight-bold text-gray-800">Kategori</h1><a href="/createKategori" type="button" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Tambah</a>
+  <h1 class="h3 mb-2 font-weight-bold text-gray-800">Penerbit</h1><a href="/createPenerbit" type="button" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Tambah</a>
   <!-- DataTables-->
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Daftar Kategori</h6>
+      <h6 class="m-0 font-weight-bold text-primary">Daftar Penerbit</h6>
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -18,23 +18,23 @@
                   <tr>
                     <th scope="col">No</th>
                     <th scope="col">Kode</th>
-                    <th scope="col">Nama Kategori</th>
+                    <th scope="col">Nama Penerbit</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php
                         $no = 1;
-                        foreach ($kategori as $kt) :
+                        foreach ($penerbit as $pb) :
                   ?>
                   <tr>
                     <th scope="row"><?=$no?></th>
-                    <td><?=$kt['kode_kategori']?></td>
-                    <td><?=$kt['nama_kategori']?></td>
+                    <td><?=$pb['kode_penerbit']?></td>
+                    <td><?=$pb['nama_penerbit']?></td>
                     <td>
                       <div class="d-flex">
-                        <a href="/editKategori/<?= $kt['kode_kategori'] ?>"><button class="btn btn-warning btn-circle"><i class="fas fa-edit"></i></button></a> &nbsp;                    
-                        <form action="/deleteKategori/<?= $kt['kode_kategori'] ?>" method="post">
+                        <a href="/editPenerbit/<?= $pb['kode_penerbit'] ?>"><button class="btn btn-warning btn-circle"><i class="fas fa-edit"></i></button></a> &nbsp;                 
+                        <form action="/deletePenerbit/<?= $pb['kode_penerbit'] ?>" method="post">
                           <input type="hidden" name="_methode" value="DELETE">
                           <button type="submit" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></button>
                         </form>
@@ -44,7 +44,7 @@
                   <?php $no++; endforeach; ?>
                 </tbody>
               </table>
-              </div>
+            </div>
           </div>
         </div>
       </div>

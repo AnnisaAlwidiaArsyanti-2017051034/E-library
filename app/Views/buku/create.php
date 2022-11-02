@@ -25,11 +25,21 @@
                 </div>
                 <div class="form-group">
                     <label for="penulis">Penulis</label>
-                    <input type="text" name="penulis" class="form-control" id="penulis">
+                    <select name = "penulis" id="penulis" class="form-control" required>
+                        <option value="" hidden>--Pilih--</option>
+                        <?php foreach ($penulis as $pn) : ?>
+                            <option value="<?=$pn['nama_penulis']?>"><?=$pn['nama_penulis']?></option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="penerbit">Penerbit</label>
-                    <input type="text" name="penerbit" class="form-control" id="penerbit">
+                    <select name = "penerbit" id="penerbit" class="form-control" required>
+                        <option value="" hidden>--Pilih--</option>
+                        <?php foreach ($penerbit as $pb) : ?>
+                            <option value="<?=$pb['nama_penerbit']?>"><?=$pb['nama_penerbit']?></option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="tahun_terbit">Tahun Terbit</label>
