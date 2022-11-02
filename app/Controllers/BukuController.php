@@ -67,13 +67,13 @@ class BukuController extends BaseController
         $bukuModel->save($data);
         return redirect()->to('/buku');
     }
-    public function delete($kode){
+    public function delete($kode_buku){
         $bukuModel = new Buku();
-        $bukuModel->delete($kode);
+        $bukuModel->delete($kode_buku);
         
         return redirect()->to('/buku');
     }
-    public function edit($kode){
+    public function edit($kode_buku){
         $kategoriModel = new Kategori();
         $kategori = $kategoriModel->findAll();        
         $penulisModel = new Penulis();
@@ -81,7 +81,7 @@ class BukuController extends BaseController
         $penerbitModel = new Penerbit();
         $penerbit = $penerbitModel->findAll();
         $bukuModel = new Buku();
-        $buku = $bukuModel->find($kode);
+        $buku = $bukuModel->find($kode_buku);
         $data = [
             'title' => 'Tambah Buku',
             'kategori' => $kategori,
@@ -92,7 +92,7 @@ class BukuController extends BaseController
         return view('buku/edit', $data);
     }
 
-    public function update($kode){
+    public function update($kode_buku){
         if(!$this->validate([
             'judul_buku' => 'required|string',
             'kategori' => 'required',
@@ -104,7 +104,7 @@ class BukuController extends BaseController
             'posisi_rak'  => 'required|string',
             'gambar'  => 'required|string',
         ])){
-            return redirect()->to('/editBuku/'.$kode);
+            return redirect()->to('/editBuku/'.$kode_buku);
         }
         $bukuModel = new Buku();
         $data = [
@@ -118,7 +118,7 @@ class BukuController extends BaseController
             'posisi_rak' => $this->request->getPost('posisi_rak'),
             'gambar' => $this->request->getPost('gambar'),
         ];
-        $bukuModel->update($kode, $data);
+        $bukuModel->update($kode_buku, $data);
         return redirect()->to('/buku');
     }
 

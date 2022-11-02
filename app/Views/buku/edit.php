@@ -8,7 +8,7 @@
         </div>
     
         <!-- form start -->
-        <form action="/updateBuku/<?= $buku['kode'] ?>" method="post">
+        <form action="/updateBuku/<?= $buku['kode_buku'] ?>" method="post">
             <div class="card-body">
                 <div class="form-group">
                     <label for="judul_buku">Judul Buku</label>
@@ -19,17 +19,27 @@
                     <select name = "kategori" id="kategori" class="form-control" required>
                         <option value="" hidden>--Pilih--</option>
                         <?php foreach ($kategori as $kt) : ?>
-                            <option value="<?=$kt['nama_kategori']?>" <?=$buku['kategori'] == $kt['nama_kategori'] ? 'selected' :null?>><?=$kt['nama_kategori']?></option>
+                            <option value="<?=$kt['nama_kategori']?>" <?=$buku['kategori'] == $kt['kode_kategori'] ? 'selected' :null?>><?=$kt['nama_kategori']?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="penulis">Penulis</label>
-                    <input type="text" name="penulis" class="form-control" id="penulis" value="<?= $buku['penulis'] ?>">
+                    <select name = "penulis" id="penulis" class="form-control" required>
+                        <option value="" hidden>--Pilih--</option>
+                        <?php foreach ($penulis as $pn) : ?>
+                            <option value="<?=$pn['nama_penulis']?>" <?=$buku['penulis'] == $pn['kode_penulis'] ? 'selected' :null?>><?=$pn['nama_penulis']?></option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="penerbit">Penerbit</label>
-                    <input type="text" name="penerbit" class="form-control" id="penerbit" value="<?= $buku['penerbit'] ?>">
+                    <select name = "penerbit" id="penerbit" class="form-control" required>
+                        <option value="" hidden>--Pilih--</option>
+                        <?php foreach ($penerbit as $pb) : ?>
+                            <option value="<?=$pb['nama_penerbit']?>" <?=$buku['penerbit'] == $pb['kode_penerbit'] ? 'selected' :null?>><?=$pb['nama_penerbit']?></option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="tahun_terbit">Tahun Terbit</label>
