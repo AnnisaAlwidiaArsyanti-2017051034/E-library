@@ -8,7 +8,7 @@
             <h6 class="m-0 font-weight-bold text-primary">Tambah Buku</h6>
         </div>    
         <!-- form start -->
-        <form action="/storeBuku" method="post">
+        <form action="/storeBuku" method="post" enctype="multipart/form-data">
             <div class="card-body">
                 <div class="form-group">
                     <label for="judul_buku">Judul Buku</label>
@@ -19,7 +19,7 @@
                     <select name = "kategori" id="kategori" class="form-control" required>
                         <option value="" hidden>--Pilih--</option>
                         <?php foreach ($kategori as $kt) : ?>
-                            <option value="<?=$kt['nama_kategori']?>"><?=$kt['nama_kategori']?></option>
+                            <option value="<?=$kt['kode_kategori']?>"><?=$kt['nama_kategori']?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
@@ -28,7 +28,7 @@
                     <select name = "penulis" id="penulis" class="form-control" required>
                         <option value="" hidden>--Pilih--</option>
                         <?php foreach ($penulis as $pn) : ?>
-                            <option value="<?=$pn['nama_penulis']?>"><?=$pn['nama_penulis']?></option>
+                            <option value="<?=$pn['kode_penulis']?>"><?=$pn['nama_penulis']?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
@@ -37,7 +37,7 @@
                     <select name = "penerbit" id="penerbit" class="form-control" required>
                         <option value="" hidden>--Pilih--</option>
                         <?php foreach ($penerbit as $pb) : ?>
-                            <option value="<?=$pb['nama_penerbit']?>"><?=$pb['nama_penerbit']?></option>
+                            <option value="<?=$pb['kode_penerbit']?>"><?=$pb['nama_penerbit']?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
@@ -59,8 +59,12 @@
                 </div>
                 <div class="form-group">
                     <label for="gambar">Gambar</label>
-                    <input type="text" name="gambar" class="form-control" id="gambar">
+                    <div class="custom-file">
+                        <input type="file" name='gambar' class="custom-file-input" accept='image/*' id="gambar">
+                        <label class="custom-file-label">Pilih File</label>
+                    </div>
                 </div>
+                <div class="img-preview" style="margin-bottom: 20px;"></div>
             </div>
             <!-- /.card-body -->
             <div class="card-footer">

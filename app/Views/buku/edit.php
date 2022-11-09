@@ -19,7 +19,7 @@
                     <select name = "kategori" id="kategori" class="form-control" required>
                         <option value="" hidden>--Pilih--</option>
                         <?php foreach ($kategori as $kt) : ?>
-                            <option value="<?=$kt['nama_kategori']?>" <?=$buku['kategori'] == $kt['kode_kategori'] ? 'selected' :null?>><?=$kt['nama_kategori']?></option>
+                            <option value="<?=$kt['kode_kategori']?>" <?=$buku['kategori'] == $kt['kode_kategori'] ? 'selected' :null?>><?=$kt['nama_kategori']?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
@@ -28,7 +28,7 @@
                     <select name = "penulis" id="penulis" class="form-control" required>
                         <option value="" hidden>--Pilih--</option>
                         <?php foreach ($penulis as $pn) : ?>
-                            <option value="<?=$pn['nama_penulis']?>" <?=$buku['penulis'] == $pn['kode_penulis'] ? 'selected' :null?>><?=$pn['nama_penulis']?></option>
+                            <option value="<?=$pn['kode_penulis']?>" <?=$buku['penulis'] == $pn['kode_penulis'] ? 'selected' :null?>><?=$pn['nama_penulis']?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
@@ -37,7 +37,7 @@
                     <select name = "penerbit" id="penerbit" class="form-control" required>
                         <option value="" hidden>--Pilih--</option>
                         <?php foreach ($penerbit as $pb) : ?>
-                            <option value="<?=$pb['nama_penerbit']?>" <?=$buku['penerbit'] == $pb['kode_penerbit'] ? 'selected' :null?>><?=$pb['nama_penerbit']?></option>
+                            <option value="<?=$pb['kode_penerbit']?>" <?=$buku['penerbit'] == $pb['kode_penerbit'] ? 'selected' :null?>><?=$pb['nama_penerbit']?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
@@ -60,6 +60,13 @@
                 <div class="form-group">
                     <label for="gambar">Gambar</label>
                     <input type="text" name="gambar" class="form-control" id="gambar" value="<?= $buku['gambar'] ?>">
+                </div>
+                <div class="form-group">
+                    <label for="gambar">Gambar</label>
+                    <div class="custom-file">
+                        <input type="file" name='gambar' class="custom-file-input" accept='image/*' id="gambar">
+                        <label class="custom-file-label">Pilih File</label>
+                    </div>
                 </div>
             </div>
             <!-- /.card-body -->

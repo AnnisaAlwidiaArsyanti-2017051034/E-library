@@ -37,20 +37,20 @@
                   ?>
                   <tr>
                     <th scope="row"><?=$no?></th>
-                    <td><?=$bk['kode_buku']?></td>
-                    <td><?=$bk['judul_buku']?></td>
-                    <td><?=$bk['kategori']?></td>
-                    <td><?=$bk['penulis']?></td>
-                    <td><?=$bk['penerbit']?></td>
-                    <td><?=$bk['tahun_terbit']?></td>
-                    <td><?=$bk['halaman']?></td>
-                    <td><?=$bk['jumlah_stok']?></td>
-                    <td><?=$bk['posisi_rak']?></td>
-                    <td><?=$bk['gambar']?></td>
+                    <td><?php echo $bk->kode_buku ?></td>
+                    <td><?php echo $bk->judul_buku?></td>
+                    <td><?php echo $bk->nama_kategori?></td>
+                    <td><?php echo $bk->penulis?></td>
+                    <td><?php echo $bk->penerbit?></td>
+                    <td><?php echo $bk->tahun_terbit?></td>
+                    <td><?php echo $bk->halaman?></td>
+                    <td><?php echo $bk->jumlah_stok?></td>
+                    <td><?php echo $bk->posisi_rak?></td>
+                    <td><?php echo $bk->gambar?></td>
                     <td>
                       <div class="d-flex">
-                        <a href="/editBuku/<?= $bk['kode_buku'] ?>"><button class="btn btn-warning btn-circle"><i class="fas fa-edit"></i></button></a>&nbsp;                    
-                        <form action="/deleteBuku/<?= $bk['kode_buku'] ?>" method="post"> 
+                        <a href="/editBuku/<?= $bk->kode_buku ?>"><button class="btn btn-warning btn-circle"><i class="fas fa-edit"></i></button></a>&nbsp;                    
+                        <form action="/deleteBuku/<?= $bk->kode_buku ?>" method="post"> 
                           <input type="hidden" name="_methode" value="DELETE">
                           <button type="submit" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></button>
                         </form>

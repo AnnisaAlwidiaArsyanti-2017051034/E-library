@@ -10,14 +10,22 @@ use App\Models\Penulis;
 
 class BukuController extends BaseController
 {
+    protected $modelsimpanan;
+    public function __construct()
+    {
+        $this->bukuModel = new Buku();
+    }
     public function index()
     {
-        $bukuModel = new Buku();
-        $buku = $bukuModel->findAll();
-        $data = [
-            'title' => 'buku',
-            'buku' => $buku,            
-        ];
+        $buku = $this->bukuModel->getKategori()->getResult();
+        // $buku = $this->bukuModel->getPenulis()->getResult();
+        // $buku = $this->bukuModel->getPenerbit()->getResult();
+        // var_dump($bukuModel);
+        $data = array(
+            'title' => 'Buku',
+            'buku' => $buku,
+            // 'query' => $query,
+        );
         return view('buku/list', $data);
     }
     public function create(){        
@@ -38,6 +46,7 @@ class BukuController extends BaseController
         ];
         return view('buku/create', $data);
     }
+
     public function store(){
         if(!$this->validate([
             'judul_buku' => 'required|string',
@@ -48,7 +57,10 @@ class BukuController extends BaseController
             'halaman' => 'required|numeric',
             'jumlah_stok'  => 'required|numeric',
             'posisi_rak'  => 'required|string',
-            'gambar'  => 'required|string',
+            'gambar'  => [
+                'label' => 'Gambar',
+                'rules' => 'uploaded[gambar]|is_image[gambar]|max_size[gambar, 1024]'
+            ],
         ])){
             return redirect()->to('/createBuku');
         }
@@ -62,8 +74,9 @@ class BukuController extends BaseController
             'halaman' => $this->request->getPost('halaman'),
             'jumlah_stok' => $this->request->getPost('jumlah_stok'),
             'posisi_rak' => $this->request->getPost('posisi_rak'),
-            'gambar' => $this->request->getPost('gambar'),
         ];
+        $gambar = $this->request->getFile('gambar');
+        $gambar->move('uploads');
         $bukuModel->save($data);
         return redirect()->to('/buku');
     }
@@ -102,7 +115,7 @@ class BukuController extends BaseController
             'halaman' => 'required|numeric',
             'jumlah_stok'  => 'required|numeric',
             'posisi_rak'  => 'required|string',
-            'gambar'  => 'required|string',
+            'gambar'  => 'required',
         ])){
             return redirect()->to('/editBuku/'.$kode_buku);
         }
@@ -116,7 +129,7 @@ class BukuController extends BaseController
             'halaman' => $this->request->getPost('halaman'),
             'jumlah_stok' => $this->request->getPost('jumlah_stok'),
             'posisi_rak' => $this->request->getPost('posisi_rak'),
-            'gambar' => $this->request->getPost('gambar'),
+            'gambar' => $this->request->getFile('gambar'),
         ];
         $bukuModel->update($kode_buku, $data);
         return redirect()->to('/buku');

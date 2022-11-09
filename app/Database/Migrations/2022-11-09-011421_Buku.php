@@ -22,17 +22,17 @@ class Buku extends Migration
             'kategori' => [
                 'type' => 'INT',
                 'constraint' => 5,
-                'unsigned'       => true,
+                'unsigned' => true,
             ],
             'penulis' => [
                 'type' => 'INT',
                 'constraint' => 5,
-                'unsigned'       => true,
+                'unsigned' => true,
             ],
             'penerbit' => [
                 'type' => 'INT',
                 'constraint' => 5,
-                'unsigned'       => true,
+                'unsigned' => true,
             ],
             'tahun_terbit' => [
                 'type' => 'INT',
