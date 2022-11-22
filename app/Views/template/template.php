@@ -9,15 +9,19 @@
         <title>E-Library</title>
         <!-- Custom fonts for this template-->
         <link href="<?= base_url() ?>/assets/sbadmin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-        <link
-            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
         <!-- Custom styles for this template-->
-        <link href="<?= base_url('assets/sbadmin/css/sb-admin-2.min.css') ?>" rel="stylesheet">
-        <script type="text/javascript" src="assets/node_modules/jquery/dist/jquery.min.js"></script>
+        <link href="<?= base_url('/assets/sbadmin/css/sb-admin-2.min.css') ?>" rel="stylesheet">
+        <script type="text/javascript" src="/assets/sbadmin/vendor/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/assets/sbadmin/js/sb-admin-2.min.js"></script>
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css"/>
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.js"></script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
         <?= $this->renderSection('styles') ?>
     </head>
     <body id="page-top">
@@ -75,18 +79,22 @@
             </div>
         </div>
         <!-- Bootstrap core JavaScript-->
-        <script src="<?= base_url('assets/sbadmin/vendor/jquery/jquery.min.js') ?>"></script>
-        <script src="<?= base_url('assets/sbadmin/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+        <script src="<?= base_url('/assets/sbadmin/vendor/jquery/jquery.min.js') ?>"></script>
+        <script src="<?= base_url('/assets/sbadmin/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
         <!-- Core plugin JavaScript-->
-        <script src="<?= base_url('assets/sbadmin/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
+        <script src="<?= base_url('/assets/sbadmin/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
         <!-- Custom scripts for all pages-->
-        <script src="<?= base_url('assets/sbadmin/js/sb-admin-2.min.js') ?>"></script>
+        <script src="<?= base_url('/assets/sbadmin/js/sb-admin-2.min.js') ?>"></script>
         <!-- Page level plugins -->
-        <script src="assets/sbadmin/vendor/datatables/jquery.dataTables.min.js"></script>
-        <script src="assets/sbadmin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="/assets/sbadmin/vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="/assets/sbadmin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="/assets/sbadmin/vendor/chart.js/Chart.bundle.min.js"></script>
         <!-- Page level custom scripts -->
-        <script src="assets/sbadmin/js/demo/datatables-demo.js"></script>
-        <?= $this->renderSection('scripts') ?>
+        <script src="/assets/sbadmin/js/demo/datatables-demo.js"></script>
+        <script src="/assets/sbadmin/js/demo/chart-area-demo.js"></script>
+        <script src="/assets/sbadmin/js/demo/chart-pie-demo.js"></script>
 
         <?= $this->renderSection('scripts') ?>
     </body>

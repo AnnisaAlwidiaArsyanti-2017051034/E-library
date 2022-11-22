@@ -34,10 +34,29 @@
                     <td>
                       <div class="d-flex">
                         <a href="/editKategori/<?= $kt['kode_kategori'] ?>"><button class="btn btn-warning btn-circle"><i class="fas fa-edit"></i></button></a> &nbsp;                    
-                        <form action="/deleteKategori/<?= $kt['kode_kategori'] ?>" method="post">
-                          <input type="hidden" name="_methode" value="DELETE">
-                          <button type="submit" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></button>
-                        </form>
+                        <a class="btn btn-danger btn-circle" href="#" data-toggle="modal" data-target="#hapusModal-<?= $kt['kode_kategori'] ?>"><i class="fas fa-trash"></i></a>
+                        
+                        <div class="modal fade" id="hapusModal-<?= $kt['kode_kategori'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Hapus Kategori</h5>
+                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+                                    <form action="/deleteKategori/<?= $kt['kode_kategori'] ?>" method="post">
+                                    <div class="modal-body">Apakah anda yakin ingin menghapus kategori <?= $kt['nama_kategori'] ?>?</div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                                        <input type="hidden" name="_methode" value="DELETE">
+                                        <button type="submit" class="btn btn-danger">Hapus</a>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                       </div>
                     </td>
                   </tr>

@@ -15,7 +15,7 @@
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 Buku
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $buku[0]['total']?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-book fa-2x text-gray-300"></i>
@@ -33,7 +33,7 @@
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                 Kategori
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $kategori[0]['total']?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-grip-horizontal fa-2x text-gray-300"></i>
@@ -50,7 +50,7 @@
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                 Penulis
                             </div>
-                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">0</div>
+                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo $penulis[0]['total']?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-user-tag fa-2x text-gray-300"></i>
@@ -67,7 +67,7 @@
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                 Penerbit
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $penerbit[0]['total']?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-building fa-2x text-gray-300"></i>

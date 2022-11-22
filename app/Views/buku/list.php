@@ -17,7 +17,6 @@
                 <thead>
                   <tr>
                     <th scope="col">No</th>
-                    <th scope="col">Kode Buku</th>
                     <th scope="col">Judul Buku</th>
                     <th scope="col">Kategori</th>
                     <th scope="col">Penulis</th>
@@ -37,11 +36,10 @@
                   ?>
                   <tr>
                     <th scope="row"><?=$no?></th>
-                    <td><?php echo $bk->kode_buku ?></td>
                     <td><?php echo $bk->judul_buku?></td>
                     <td><?php echo $bk->nama_kategori?></td>
-                    <td><?php echo $bk->penulis?></td>
-                    <td><?php echo $bk->penerbit?></td>
+                    <td><?php echo $bk->nama_penulis?></td>
+                    <td><?php echo $bk->nama_penerbit?></td>
                     <td><?php echo $bk->tahun_terbit?></td>
                     <td><?php echo $bk->halaman?></td>
                     <td><?php echo $bk->jumlah_stok?></td>
@@ -50,10 +48,29 @@
                     <td>
                       <div class="d-flex">
                         <a href="/editBuku/<?= $bk->kode_buku ?>"><button class="btn btn-warning btn-circle"><i class="fas fa-edit"></i></button></a>&nbsp;                    
-                        <form action="/deleteBuku/<?= $bk->kode_buku ?>" method="post"> 
-                          <input type="hidden" name="_methode" value="DELETE">
-                          <button type="submit" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></button>
-                        </form>
+                        <a class="btn btn-danger btn-circle" href="#" data-toggle="modal" data-target="#hapusModal-<?= $bk->kode_buku ?>"><i class="fas fa-trash"></i></a>
+                        
+                        <div class="modal fade" id="hapusModal-<?= $bk->kode_buku ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Hapus Buku</h5>
+                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+                                    <form action="/deleteBuku/<?= $bk->kode_buku ?>" method="post">
+                                    <div class="modal-body">Apakah anda yakin ingin menghapus buku <?= $bk->judul_buku ?>?</div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                                        <input type="hidden" name="_methode" value="DELETE">
+                                        <button type="submit" class="btn btn-danger">Hapus</a>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                       </div>
                     </td>
                   </tr>

@@ -59,10 +59,6 @@
                 </div>
                 <div class="form-group">
                     <label for="gambar">Gambar</label>
-                    <input type="text" name="gambar" class="form-control" id="gambar" value="<?= $buku['gambar'] ?>">
-                </div>
-                <div class="form-group">
-                    <label for="gambar">Gambar</label>
                     <div class="custom-file">
                         <input type="file" name='gambar' class="custom-file-input" accept='image/*' id="gambar">
                         <label class="custom-file-label">Pilih File</label>

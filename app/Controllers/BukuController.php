@@ -17,10 +17,7 @@ class BukuController extends BaseController
     }
     public function index()
     {
-        $buku = $this->bukuModel->getKategori()->getResult();
-        // $buku = $this->bukuModel->getPenulis()->getResult();
-        // $buku = $this->bukuModel->getPenerbit()->getResult();
-        // var_dump($bukuModel);
+        $buku = $this->bukuModel->getData()->getResult();
         $data = array(
             'title' => 'Buku',
             'buku' => $buku,
